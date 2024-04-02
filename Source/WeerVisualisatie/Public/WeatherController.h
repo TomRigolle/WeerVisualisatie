@@ -55,8 +55,6 @@ public:
 		float RefreshRate;
 
 private:
-	const FString API_CALL = "https://api.openweathermap.org/data/2.5/weather?lat=%.2f&lon=%.2f&units=metric&appid=%s";
-
 	FHttpModule* m_http;
 	float m_refreshTimer;
 
@@ -76,7 +74,7 @@ public:
 	void OnWeatherResponse(FHttpRequestPtr Request, FHttpResponsePtr Response, bool bConnectedSuccesfully);
 
 	UFUNCTION(BlueprintCallable)
-		double GetWeatherInfoValue(EWeatherInfoType type);
+		double GetWeatherInfoValue(EWeatherInfoType type) const;
 
 private:
 	double GetValueFromJson(TSharedPtr<FJsonObject> jsonObject, FString objectFieldName, FString numberFieldName);

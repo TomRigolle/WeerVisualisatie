@@ -89,7 +89,7 @@ double AWeatherController::GetValueFromJson(TSharedPtr<FJsonObject> jsonObject, 
 	return (*objectPtr)->HasField(numberFieldName) ? (*objectPtr)->GetNumberField(numberFieldName) : 0.0;
 }
 
-double AWeatherController::GetWeatherInfoValue(EWeatherInfoType type)
+double AWeatherController::GetWeatherInfoValue(EWeatherInfoType type) const
 {
 	switch (type)
 	{
